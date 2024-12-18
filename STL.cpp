@@ -243,11 +243,103 @@ void explain_unordered_Set(){
     // all functions similiar except for lower_bound/upper_bound
 }
 
+void explainMap(){
+    // key, value
+    map<int, int> mpp;
+    map<int, pair<int, int>> mpp2;
+    map<pair<int, int>, int> mpp3;
+
+
+    mpp[1] = 2; // store 2 on key 1. {1, 2}
+    mpp.insert({3, 1}); // store 1 on key 3. {3, 1}
+    mpp.insert({2, 4}); // store 4 on key 2
+    /*
+        {1, 2}, {2, 4}, {3, 1}
+    */
+
+    mpp3[{2, 3}] = 10;
+
+    // iterator
+    for(auto it: mpp){
+        cout << it.first << " "<< it.second << endl;
+    }
+
+    // addrress of key
+    auto it = mpp.find(3);
+    // cout << *(it).second;
+}
+
+void explainMultiMap(){
+    // everything as map but can store duplicate keys
+
+}
+
+void explainUnorderdMap(){
+    // unique keys but not sorted
+}
+
+bool comp(pair<int, int> p1, pair<int, int> p2){
+    if(p1.second < p2.second) return true;
+
+    if(p1.second > p2.second) return false;
+    // they are the same
+
+    if(p1.first > p2.first) return true;
+
+    return false;
+    
+}
+
+void explainSort(){
+
+    vector<int> v = {1, 3, 4, 2};
+    sort(v.begin(), v.end());
+
+    // sort in descending order
+    sort(v.begin(), v.end(), std::greater<int>);
+
+    pair<int, int> a[] = {{1, 2}, {2, 1}, {4, 1}};
+
+    // sort it according to the second element.
+    // if second element is same then sort.
+    //  it according to first element but in descending.
+
+    sort(a, a+n, comp);
+}
+
+void explainExtra(){
+    //  builtin popcount
+    // counts number of 1 bits
+    int num = 7;
+    int cnt = _builtin_popcount();
+
+    // permutations
+    // must be sorted before
+    
+    string s = "123";
+    sort(s.begin(), s.end());
+
+    do{
+        // print first string
+        cout << s << endl;
+    } while(next_permutation(s.begin(), s.end())); ///compute next permutation
+
+
+    // find the max element in array.
+    int maxi = *max_element(a, a+n);
+
+    
+
+}
+
+ 
+
+
 
 
 int main()
 {
-    // explainPair();
+
 
 
     
