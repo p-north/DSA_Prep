@@ -6,7 +6,7 @@ void explainPair(){
 
     // pair of two numbers
     pair<int, int> p = {1,3};
-    cout << p.first << " " << p.second << endl;
+    cout << p.first << " " << p.second;
 
     // pair of multiple numbers
     pair<int, pair<int, int>> p2 = {1, {3, 4}};
