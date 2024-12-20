@@ -17,14 +17,6 @@ The problems are categorized based on their topics:
 🗾 Backtracking  
 🗾 Miscellaneous  
 ```
-
-Each folder contains:
-- **Problem Statement:** A brief description of the problem.
-- **Solution:** My implementation of the problem.
-- **Explanation:** Comments in the code to explain the logic.
-
----
-
 ## 🌟 Features
 
 - Solutions are optimized for readability and performance.
