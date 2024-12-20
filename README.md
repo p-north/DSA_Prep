@@ -49,7 +49,7 @@ This repository is a part of my journey to strengthen my problem-solving skills 
 
 If you have any questions or feedback, feel free to reach out:
 
-- **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/puneet-north/)
+- **LinkedIn:** [Puneet North](https://www.linkedin.com/in/puneet-north/)
 
 ---
 
