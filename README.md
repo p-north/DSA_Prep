@@ -8,7 +8,8 @@ The problems are categorized based on their topics:
 
 ```
 📎 solved-dsa-problems  
-🗾 Arrays  
+🗾 Arrays_Hashing  
+🗾 BinarySearch  
 🗾 Strings  
 🗾 LinkedLists  
 🗾 Trees  
