@@ -11,10 +11,11 @@ The problems are categorized based on their topics:
 🗾 Arrays_Hashing  
 🗾 BinarySearch  
 🗾 Strings  
-🗾 LinkedLists  
+🗾 LinkedList 
 🗾 Trees  
 🗾 Graphs  
 🗾 DynamicProgramming  
+🗾 SlidingWindow 
 🗾 Backtracking  
 🗾 Miscellaneous  
 ```
