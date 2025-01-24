@@ -12,7 +12,7 @@ vector<int> topoSort(int V, vector<int> adj[]){
     queue<int> q;
     for(int i = 0; i<V; i++){
         if(indegree[i] == 0){
-            p.push(i;)
+            q.push(i);
         }
     }
     vector<int> topo;
