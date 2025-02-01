@@ -1,15 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 
- struct ListNode {
-      int val;
-      ListNode *next;
-      ListNode() : val(0), next(nullptr) {}
-      ListNode(int x) : val(x), next(nullptr) {}
-      ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
 
- // helper function for greatest common divisor
+//Optimal solution
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    // helper function for greatest common divisor
     int greatestCD(int val1, int val2){
         int divident = val1;
         int divisor = val2;
@@ -36,42 +42,34 @@ using namespace std;
         //  largest positive integer that evenly divides borh numbers
         ListNode* next = head->next;
         ListNode* curr = head;
-        while(!next){
+        while(next){
             int divisor = greatestCD(curr->val, next->val);
             // create a temp node
             ListNode* divValue = new ListNode(divisor);
+            // temporary store current node
             ListNode* temp = curr;
+            // move original curr
             curr = curr->next;
+            // make old point to divisor
             temp->next = divValue;
+            // make divisor point to next
             divValue->next = next;
             next = next->next;
         }
 
-        return head;
+        return head;    
+    }
+};
 
-
-
-
-
-
-
-
-        
-}
 int main()
 {
-    ListNode* head = new ListNode(18);
-    ListNode* val1 = new ListNode(6);
-    ListNode* val2 = new ListNode(10);
-    ListNode* val3 = new ListNode(3);
-
-    head->next = val1;
-    val1->next = val2;
-    val2->next = val3;
-
-    ListNode* temp = insertGreatestCommonDivisors(head);
-
-
+    /*
+    
+        Level: Medium
+        Problem: Given the head of a linked list head, in which each node contains an integer value. Between every pair of adjacent nodes, insert a new node with a value equal to the greatest common divisor of them. Return the linked list after insertion.
+        Link: https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list/description/
+    
+    */
  
     return 0;
 }
