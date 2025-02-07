@@ -9,69 +9,85 @@ using namespace std;
       ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
- // helper function for greatest common divisor
-    int greatestCD(int val1, int val2){
-        int divident = val1;
-        int divisor = val2;
-        while(divident%divisor){
-            int temp = divident%divisor;
-            divident = divisor;
-            divisor = temp;   
-        }
+void reorderList(ListNode* head) {
+    // edge cases
+    if(!head){
+        return;
+    }
+    // given a list
 
-        return divisor;
+    // reorder the list in the specified format
+
+    // stack approach?
+    stack<ListNode*> st;
+
+    // get the last ndoe
+    ListNode* last;
+
+    // get the length of the LL, while adding to the stack
+    int length = 0;
+    ListNode* temp = head;
+    while(temp){
+        temp=temp->next;
+        length++;
+    }
+
+    // position to stop at when linking nodes
+    int n = (length/2)+1;
+
+    // go to middle of linkedlist adding items to stack
+    temp = head;
+    int count = 1;
+    while(temp){
+        if(count >= n){
+            st.push(temp);
+        }
+        // when reached middle element disconnect it
+        if(count==n){
+            ListNode* t1 = temp;
+            temp = temp->next;
+            t1->next = nullptr;
+            count++;
+            continue;
+        }
+        temp = temp->next;
+        count++;
+    }
+
+    // only go up until stack empty
+    temp = head;
+    count = 1;
+    while(!st.empty()){
+        ListNode* prv = temp;
+        temp = temp->next;
+        ListNode* point = st.top();
+        st.pop();
+        prv->next = point;
+        if(st.empty()){
+            point->next = nullptr;
+            break;
+        }
+        point->next = temp;
 
     }
-    ListNode* insertGreatestCommonDivisors(ListNode* head) {
-
-        // edge cases one node
-        if(!head){
-            return nullptr;
-        }
-        if(!head->next){
-            return head;
-        }
-
-        // greatest common divisor of two numbers is 
-        //  largest positive integer that evenly divides borh numbers
-        ListNode* next = head->next;
-        ListNode* curr = head;
-        while(!next){
-            int divisor = greatestCD(curr->val, next->val);
-            // create a temp node
-            ListNode* divValue = new ListNode(divisor);
-            ListNode* temp = curr;
-            curr = curr->next;
-            temp->next = divValue;
-            divValue->next = next;
-            next = next->next;
-        }
-
-        return head;
 
 
-
-
-
-
-
-
-        
 }
 int main()
 {
-    ListNode* head = new ListNode(18);
-    ListNode* val1 = new ListNode(6);
-    ListNode* val2 = new ListNode(10);
-    ListNode* val3 = new ListNode(3);
+    ListNode* head = new ListNode(1);
+    ListNode* val1 = new ListNode(2);
+    ListNode* val2 = new ListNode(3);
+    ListNode* val3 = new ListNode(4);
+    ListNode* val4 = new ListNode(5);
 
     head->next = val1;
     val1->next = val2;
     val2->next = val3;
+    val3->next = val4;
 
-    ListNode* temp = insertGreatestCommonDivisors(head);
+    reorderList(head);
 
 
- 
     return 0;
 }
